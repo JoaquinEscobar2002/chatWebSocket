@@ -51,12 +51,14 @@ socket.on('messageLogs', data => {
 });
 
 socket.on('newUserConnected', data => {
-    Swal.fire({
-        toast: true,
-        position: 'top-end',
-        showConfirmationButton: false,
-        timer: 3000,
-        title: `${data} se ha unido al chat`,
-        icon: 'success'
-    })
+    if(user){
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            showConfirmationButton: false,
+            timer: 3000,
+            title: `${data} se ha unido al chat`,
+            icon: 'success'
+        });
+    }
 })
